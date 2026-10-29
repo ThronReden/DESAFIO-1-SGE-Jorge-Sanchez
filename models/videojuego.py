@@ -28,5 +28,5 @@ class Videojuego(models.Model):
         string='Estudio',
         required=True,
         help='Estudio desarrollador del juego',
-        ondelete='restrict'
+        ondelete='restrict',
     )
