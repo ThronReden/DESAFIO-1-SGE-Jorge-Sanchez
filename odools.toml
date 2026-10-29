@@ -3,3 +3,9 @@ name = "default"
 odoo_path = "C:\\Program Files\\Odoo 19.0.20260917\\server"
 addons_paths = ["C:\\Program Files\\Odoo 19.0.20260917\\server\\odoo\\addons", "$autoDetectAddons"]
 python_path = "C:\\Users\\jsanchez\\.local\\bin\\python3.14.exe"
+
+[[config.diagnostic_filters]]
+paths = ["C:/Program Files/Odoo 19.0.20260917/server/**"]
+codes = ["OLS.*"]
+types = ["Error", "Warning"]
+path_type = "in"
