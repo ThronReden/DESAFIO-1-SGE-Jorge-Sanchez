@@ -53,7 +53,7 @@ class Videojuego(models.Model):
         for record in self:
             if record.precio < 0:
                 raise ValidationError('El precio no puede ser negativo.')
-    @api.depends('precio'):
+    @api.depends('precio')
     def _compute_precio_final(self):
         for record in self:
             record.precio_final = round(record.precio, 2) # Redondear a dos decimales
