@@ -2,6 +2,7 @@ from odoo import models, fields
 
 class Estudio(models.Model):
     _name = 'modulo_desafio.estudio'
+    _rec_name = 'nombre'
     
     _description = 'Estudio desarrollador'
 
