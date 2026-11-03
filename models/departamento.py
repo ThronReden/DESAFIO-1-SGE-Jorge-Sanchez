@@ -16,7 +16,7 @@ class Departamento(models.Model):
         help='Descripción del departamento'
     )
 
-    jefeDepartamento_id = fields.One2one(
+    jefe_departamento_id = fields.One2one(
         comodel_name='modulo_desafio.empleado',
         string='Jefe del Departamento',
         required=True,
