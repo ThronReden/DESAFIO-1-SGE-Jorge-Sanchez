@@ -11,10 +11,16 @@ class Videojuego(models.Model):
         help='Nombre del videojuego'
     )
 
-    descripcion = fields.Char(
+    logo = fields.Binary(
+        string='Logo',
+        required=False,
+        help='Logo del videojuego'
+    )
+
+    descripcion = fields.Text(
         string='Descripción',
         required=False,
-        help='Descripción breve del videojuego'
+        help='Descripción del videojuego'
     )
 
     fecha_lanzamiento = fields.Date(

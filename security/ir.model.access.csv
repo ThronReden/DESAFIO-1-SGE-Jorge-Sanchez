@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_videojuego_user,access.videojuego.user,model_modulo_desafio_videojuego,base.group_user,1,1,1,1
+access_estudio_user,access.estudio.user,model_modulo_desafio_estudio,base.group_user,1,1,1,1
+access_empleado_user,access.empleado.user,model_modulo_desafio_empleado,base.group_user,1,1,1,1
+access_departamento_user,access.departamento.user,model_modulo_desafio_departamento,base.group_user,1,1,1,1

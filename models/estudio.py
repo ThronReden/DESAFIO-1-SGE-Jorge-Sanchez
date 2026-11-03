@@ -11,6 +11,18 @@ class Estudio(models.Model):
         help='Nombre del estudio desarrollador'
     )
 
+    descripcion = fields.Text(
+        string='Descripción',
+        required=False,
+        help='Descripción del estudio desarrollador'
+    )
+
+    logo = fields.Binary(
+        string='Logo',
+        required=False,
+        help='Logo del estudio desarrollador'
+    )
+
     videojuego_ids = fields.One2many(
         comodel_name='modulo_desafio.videojuego',
         inverse_name='estudio_id',
