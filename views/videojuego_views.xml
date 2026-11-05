@@ -12,6 +12,7 @@
                 <field name="estudio_id"/>
                 <field name="precio"/>
                 <field name="descuento"/>
+                <field name="precio_final"/>
             </list>
         </field>
     </record>
@@ -48,7 +49,5 @@
     </record>
 
     <!-- Menú para acceder a las diferentes vistas -->
-    <menuitem id="menu_videojuego_root" name="Ver Videojuegos"/>
-    <menuitem id="menu_videojuego_modificar" parent="menu_videojuego_root"
-        name="Modificar Videojuegos" action="action_videojuego"/>
+    <menuitem id="menu_videojuego_root" name="Ver Videojuegos" action="action_videojuego"/>
 </odoo>
