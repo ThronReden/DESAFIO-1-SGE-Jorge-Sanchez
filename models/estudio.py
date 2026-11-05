@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Estudio(models.Model):
     _name = 'modulo_desafio.estudio'
@@ -11,6 +12,13 @@ class Estudio(models.Model):
         required=True,
         help='Nombre del estudio desarrollador'
     )
+    @api.constrains('nombre')
+    def _check_nombre(self):
+        for estudio in self:
+            if not estudio.nombre.strip():
+                raise ValidationError("El nombre del estudio no puede estar vacío.")
+            if len(estudio.nombre) < 3:
+                raise ValidationError("El nombre del estudio debe tener al menos 3 caracteres.")
 
     descripcion = fields.Text(
         string='Descripción',
