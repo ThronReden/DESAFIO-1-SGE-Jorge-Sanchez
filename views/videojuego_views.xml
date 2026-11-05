@@ -6,8 +6,8 @@
         <field name="model">modulo_desafio.videojuego</field>
         <field name="arch" type="xml">
             <list string="Lista de Videojuegos">
+                <field name="logo" widget="image" options="{'size': [32, 32]}"/>
                 <field name="nombre"/>
-                <field name="logo"/>
                 <field name="fecha_lanzamiento"/>
                 <field name="estudio_id"/>
                 <field name="precio"/>
@@ -24,9 +24,9 @@
         <field name="arch" type="xml">
             <form string="Ficha del Videojuego">
                 <sheet>
+                    <field name="logo" widget="image" class="oe_avatar"/>
                     <group>
                         <field name="nombre"/>
-                        <field name="logo"/>
                         <field name="fecha_lanzamiento"/>
                         <field name="estudio_id"/>
                     </group>
