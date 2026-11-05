@@ -154,5 +154,5 @@ cython_debug/
 *.pdf
 
 # MINE
-
+.vscode/
 deploy/
