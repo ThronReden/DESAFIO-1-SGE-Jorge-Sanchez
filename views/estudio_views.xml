@@ -1,0 +1,52 @@
+<odoo>
+
+    <!--Vista de lista-->
+    <record id="view_estudio_list" model="ir.ui.view">
+        <field name="name">modulo_desafio.estudio.list</field>
+        <field name="model">modulo_desafio.estudio</field>
+        <field name="arch" type="xml">
+            <list string="Lista de Estudios">
+                <field name="logo" widget="image" options="{'size': [32, 32]}"/>
+                <field name="nombre"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <!--Vista de formulario-->
+    <record id="view_estudio_form" model="ir.ui.view">
+        <field name="name">modulo_desafio.estudio.form</field>
+        <field name="model">modulo_desafio.estudio</field>
+        <field name="arch" type="xml">
+            <form string="Ficha del Estudio">
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar"/>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <group>
+                        <field name="videojuego_ids">
+                            <list string="Videojuegos del Estudio">
+                                <field name="logo" widget="image" options="{'size': [32, 32]}"/>
+                                <field name="nombre"/>
+                                <field name="fecha_lanzamiento"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Acción que enlaza las vistas -->
+    <record id="action_estudio" model="ir.actions.act_window">
+        <field name="name">Estudios</field>
+        <field name="res_model">modulo_desafio.estudio</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_estudio_list"/>
+    </record>
+
+    <!-- Menú para acceder a las diferentes vistas -->
+    <menuitem id="menu_estudio_root" name="Estudios" action="action_estudio"/>
+</odoo>
