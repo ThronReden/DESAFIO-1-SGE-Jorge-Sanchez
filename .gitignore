@@ -152,3 +152,7 @@ cython_debug/
 
 .odools.toml
 *.pdf
+
+# MINE
+
+deploy/
