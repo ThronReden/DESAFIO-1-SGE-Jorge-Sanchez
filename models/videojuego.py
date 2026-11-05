@@ -36,7 +36,7 @@ class Videojuego(models.Model):
         help='Fecha de lanzamiento del juego'
     )
 
-    estudio_id = fields.Many2One(
+    estudio_id = fields.Many2one(
         comodel_name='modulo_desafio.estudio',
         string='Estudio',
         required=True,
