@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Departamento(models.Model):
     _name = 'modulo_desafio.departamento'
@@ -10,18 +11,22 @@ class Departamento(models.Model):
         required=True,
         help='Nombre del departamento'
     )
+    @api.constrains('nombre')
+    def _check_nombre(self):
+        for record in self:
+            if not record.nombre.strip():
+                raise ValidationError("El nombre del departamento no puede estar vacío.")
 
     descripcion = fields.Text(
         string='Descripción',
         help='Descripción del departamento'
     )
 
-    jefe_departamento_id = fields.One2one(
+    jefe_id = fields.Many2one(
         comodel_name='modulo_desafio.empleado',
         string='Jefe del Departamento',
-        required=True,
         help='Empleado que lidera el departamento',
-        ondelete='restrict',
+        ondelete='set null',
     )
 
     empleados_ids = fields.One2many(
