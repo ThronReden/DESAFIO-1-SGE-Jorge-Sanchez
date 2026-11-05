@@ -29,9 +29,9 @@ class Departamento(models.Model):
         ondelete='set null',
     )
 
-    empleados_ids = fields.One2many(
+    empleado_ids = fields.One2many(
         comodel_name='modulo_desafio.empleado',
-        reverse_name='departamento_id',
+        inverse_name='departamento_id',
         string='Empleados',
         help='Empleados que pertenecen a este departamento',
     )

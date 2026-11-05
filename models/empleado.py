@@ -26,7 +26,6 @@ class Empleado(models.Model):
     departamento_id = fields.Many2one(
         comodel_name='modulo_desafio.departamento',
         string='Departamento',
-        required=True,
         help='Departamento al que pertenece el empleado',
         ondelete='restrict',
     )
