@@ -14,8 +14,8 @@
 
     # always loaded
     'data': [
-        # Indicar carpeta views
-        # Indicar grupo de seguridad basado en rol
+        'security/ir.model.access.csv',
+        'views/videojuego_views.xml',
     ],
     'instalable': True,
     'application': True,
