@@ -49,5 +49,5 @@
     </record>
 
     <!-- Menú para acceder a las diferentes vistas -->
-    <menuitem id="menu_videojuego_root" name="Ver Videojuegos" action="action_videojuego"/>
+    <menuitem id="menu_videojuego_root" name="Videojuegos" action="action_videojuego"/>
 </odoo>
