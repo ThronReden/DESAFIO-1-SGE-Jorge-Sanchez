@@ -18,25 +18,26 @@
 
     <!--Vista de formulario-->
     <record id="view_videojuego_form" model="ir.ui.view">
-    <field name="name">modulo_desafio.videojuego.form</field>
-    <field name="model">modulo_desafio.videojuego</field>
-    <field name="arch" type="xml">
-        <form string="Ficha del Videojuego">
-            <sheet>
-                <group>
-                    <field name="nombre"/>
-                    <field name="logo"/>
-                    <field name="fecha_lanzamiento"/>
-                    <field name="estudio_id"/>
-                </group>
-                <group>
-                    <field name="precio"/>
-                    <field name="descuento"/>
-                    <field name="precio_final" readonly="1"/>
-                </group>
-            </sheet>
-        </form>
-    </field>
+        <field name="name">modulo_desafio.videojuego.form</field>
+        <field name="model">modulo_desafio.videojuego</field>
+        <field name="arch" type="xml">
+            <form string="Ficha del Videojuego">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="logo"/>
+                        <field name="fecha_lanzamiento"/>
+                        <field name="estudio_id"/>
+                    </group>
+                    <group>
+                        <field name="precio"/>
+                        <field name="descuento"/>
+                        <field name="precio_final" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
     
     <!-- Acción que enlaza las vistas -->
     <record id="action_videojuego" model="ir.actions.act_window">
