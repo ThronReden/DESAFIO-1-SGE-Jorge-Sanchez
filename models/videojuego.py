@@ -18,7 +18,7 @@ class Videojuego(models.Model):
             if not record.nombre.strip():
                 raise ValidationError('El nombre no puede estar vacío.')
 
-    logo = fields.Binary(
+    logo = fields.Image(
         string='Logo',
         required=False,
         help='Logo del videojuego'

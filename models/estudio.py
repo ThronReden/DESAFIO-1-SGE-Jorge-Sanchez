@@ -26,7 +26,7 @@ class Estudio(models.Model):
         help='Descripción del estudio desarrollador'
     )
 
-    logo = fields.Binary(
+    logo = fields.Image(
         string='Logo',
         required=False,
         help='Logo del estudio desarrollador'
