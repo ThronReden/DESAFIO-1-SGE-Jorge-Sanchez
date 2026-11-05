@@ -16,6 +16,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/videojuego_views.xml',
+        'views/estudio_views.xml',
     ],
     'instalable': True,
     'application': True,
