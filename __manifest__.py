@@ -19,6 +19,7 @@
         'views/videojuego_views.xml',
         'views/estudio_views.xml',
         'views/empleado_views.xml',
+        'views/departamento_views.xml',
     ],
     'instalable': True,
     'application': True,

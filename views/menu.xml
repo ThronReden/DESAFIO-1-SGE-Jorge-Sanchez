@@ -16,4 +16,9 @@
     <menuitem id="menu_empleado_root" name="Empleados" action="action_empleado"
         parent="menu_modulo_desafio_root" sequence="30"
     />
+
+    <!-- Menú vista departamento -->
+    <menuitem id="menu_empleado_root" name="Departamentos" action="action_departamento"
+        parent="menu_modulo_desafio_root" sequence="40"
+    />
 </odoo>

@@ -1,0 +1,53 @@
+<odoo>
+
+    <!--Vista de lista-->
+    <record id="view_departamento_list" model="ir.ui.view">
+        <field name="name">modulo_desafio.departamento.list</field>
+        <field name="model">modulo_desafio.departamento</field>
+        <field name="arch" type="xml">
+            <list string="Lista de Departamentos">
+                <field name="nombre"/>
+                <field name="descripcion"/>
+                <field name="jefe_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!--Vista de formulario-->
+    <record id="view_departamento_form" model="ir.ui.view">
+        <field name="name">modulo_desafio.departamento.form</field>
+        <field name="model">modulo_desafio.departamento</field>
+        <field name="arch" type="xml">
+            <form string="Ficha del Departamento">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="nombre" placeholder="Nombre del departamento"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="descripcion"/>
+                        <field name="jefe_id"/>
+                    </group>
+                    <group>
+                        <field name="empleado_ids">
+                            <list string="Empleados del Departamento">
+                                <field name="nombre"/>
+                                <field name="apellidos"/>
+                                <field name="email"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Acción que enlaza las vistas -->
+    <record id="action_departamento" model="ir.actions.act_window">
+        <field name="name">Departamentos</field>
+        <field name="res_model">modulo_desafio.departamento</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_departamento_list"/>
+    </record>
+</odoo>
