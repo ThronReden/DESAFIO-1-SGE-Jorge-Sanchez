@@ -1,0 +1,129 @@
+<odoo>
+    <!-- Estudios -->
+    <record id="estudio_demo_1" model="modulo_desafio.estudio">
+        <field name="nombre">Los Valves</field>
+        <field name="descripcion">Nuestro estudio favorito</field>
+    </record>
+    <record id="estudio_demo_2" model="modulo_desafio.estudio">
+        <field name="nombre">Pixel Norte Games</field>
+        <field name="descripcion">Estudio independiente especializado en aventuras y juegos de gestión con estética retro</field>
+    </record>
+
+    <!-- Videojuegos -->
+    <record id="videojuego_demo_1" model="modulo_desafio.videojuego">
+        <field name="nombre">Solo Fortress 3</field>
+        <field name="descripcion">Juego de disparos en primera persona. Lo nunca visto: ¡Valve y una tercera entrega de una saga de juegos!</field>
+        <field name="fecha_lanzamiento">2024-05-20</field>
+        <field name="estudio_id" ref="estudio_demo_1"/>
+        <field name="precio">0.00</field>
+    </record>
+    <record id="videojuego_demo_2" model="modulo_desafio.videojuego">
+        <field name="nombre">Fractal</field>
+        <field name="descripcion">Juego de disparos en primera persona. Lo nunca visto: ¡Valve y una tercera entrega de una saga de juegos!</field>
+        <field name="fecha_lanzamiento">2001-01-10</field>
+        <field name="estudio_id" ref="estudio_demo_1"/>
+        <field name="precio">25.00</field>
+        <field name="descuento">15.00</field>
+    </record>
+    <record id="videojuego_demo_3" model="modulo_desafio.videojuego">
+        <field name="nombre">Tierras de Ceniza</field>
+        <field name="descripcion">Aventura de rol en un mundo postapocalíptico donde cada decisión cambia el destino de tu aldea.</field>
+        <field name="fecha_lanzamiento">2022-11-04</field>
+        <field name="estudio_id" ref="estudio_demo_2"/>
+        <field name="precio">29.99</field>
+        <field name="descuento">20.00</field>
+    </record>
+    <record id="videojuego_demo_4" model="modulo_desafio.videojuego">
+        <field name="nombre">Cosmic Tendero</field>
+        <field name="descripcion">Gestiona una tienda de ultramarinos en una estación espacial y sobrevive a los clientes más extraños de la galaxia.</field>
+        <field name="fecha_lanzamiento">2025-03-14</field>
+        <field name="estudio_id" ref="estudio_demo_2"/>
+        <field name="precio">14.50</field>
+    </record>
+
+    <!-- Departamentos (el jefe se asigna más abajo, cuando ya existen los empleados) -->
+    <record id="departamento_demo_1" model="modulo_desafio.departamento">
+        <field name="nombre">Desarrollo</field>
+        <field name="descripcion">Programación del motor, la lógica de juego y las herramientas internas</field>
+    </record>
+    <record id="departamento_demo_2" model="modulo_desafio.departamento">
+        <field name="nombre">Arte y Diseño</field>
+        <field name="descripcion">Arte conceptual, animación, interfaz y diseño de niveles</field>
+    </record>
+
+    <!-- Empleados: Desarrollo -->
+    <record id="empleado_demo_1" model="modulo_desafio.empleado">
+        <field name="nombre">Laura</field>
+        <field name="apellidos">Martínez Gil</field>
+        <field name="fecha_nacimiento">1985-03-12</field>
+        <field name="email">laura.martinez@example.com</field>
+        <field name="salario">3800.00</field>
+        <field name="departamento_id" ref="departamento_demo_1"/>
+    </record>
+    <record id="empleado_demo_2" model="modulo_desafio.empleado">
+        <field name="nombre">Carlos</field>
+        <field name="apellidos">Pérez Romero</field>
+        <field name="fecha_nacimiento">1990-07-25</field>
+        <field name="email">carlos.perez@example.com</field>
+        <field name="salario">2900.00</field>
+        <field name="departamento_id" ref="departamento_demo_1"/>
+    </record>
+    <record id="empleado_demo_3" model="modulo_desafio.empleado">
+        <field name="nombre">Sofía</field>
+        <field name="apellidos">Navarro Ruiz</field>
+        <field name="fecha_nacimiento">1995-11-02</field>
+        <field name="email">sofia.navarro@example.com</field>
+        <field name="salario">2500.00</field>
+        <field name="departamento_id" ref="departamento_demo_1"/>
+    </record>
+    <record id="empleado_demo_4" model="modulo_desafio.empleado">
+        <field name="nombre">Miguel</field>
+        <field name="apellidos">Ortega Sanz</field>
+        <field name="fecha_nacimiento">1998-01-19</field>
+        <field name="email">miguel.ortega@example.com</field>
+        <field name="salario">2200.00</field>
+        <field name="departamento_id" ref="departamento_demo_1"/>
+    </record>
+
+    <!-- Empleados: Arte y Diseño -->
+    <record id="empleado_demo_5" model="modulo_desafio.empleado">
+        <field name="nombre">Elena</field>
+        <field name="apellidos">Domínguez Vidal</field>
+        <field name="fecha_nacimiento">1988-05-30</field>
+        <field name="email">elena.dominguez@example.com</field>
+        <field name="salario">3500.00</field>
+        <field name="departamento_id" ref="departamento_demo_2"/>
+    </record>
+    <record id="empleado_demo_6" model="modulo_desafio.empleado">
+        <field name="nombre">Javier</field>
+        <field name="apellidos">Castro Molina</field>
+        <field name="fecha_nacimiento">1992-09-08</field>
+        <field name="email">javier.castro@example.com</field>
+        <field name="salario">2700.00</field>
+        <field name="departamento_id" ref="departamento_demo_2"/>
+    </record>
+    <record id="empleado_demo_7" model="modulo_desafio.empleado">
+        <field name="nombre">Marta</field>
+        <field name="apellidos">Iglesias Peña</field>
+        <field name="fecha_nacimiento">1996-12-14</field>
+        <field name="email">marta.iglesias@example.com</field>
+        <field name="salario">2400.00</field>
+        <field name="departamento_id" ref="departamento_demo_2"/>
+    </record>
+    <record id="empleado_demo_8" model="modulo_desafio.empleado">
+        <field name="nombre">Pablo</field>
+        <field name="apellidos">Herrera Campos</field>
+        <field name="fecha_nacimiento">2000-04-03</field>
+        <field name="email">pablo.herrera@example.com</field>
+        <field name="salario">2100.00</field>
+        <field name="departamento_id" ref="departamento_demo_2"/>
+    </record>
+
+    <!-- Jefes de departamento (se actualiza el registro ya creado con el mismo id) -->
+    <record id="departamento_demo_1" model="modulo_desafio.departamento">
+        <field name="jefe_id" ref="empleado_demo_1"/>
+    </record>
+    <record id="departamento_demo_2" model="modulo_desafio.departamento">
+        <field name="jefe_id" ref="empleado_demo_5"/>
+    </record>
+</odoo>
