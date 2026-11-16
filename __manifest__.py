@@ -21,7 +21,7 @@
         'views/departamento_views.xml',
         'views/menu.xml',
     ],
-    'instalable': True,
+    'installable': True,
     'application': True,
     'demo': [ 'demo.xml' ],
 }
