@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError
 
 class Empleado(models.Model):
     _name = 'modulo_desafio.empleado'
+    _rec_name = 'nombre_completo'
     
     _description = 'Empleado'
 
@@ -27,6 +28,12 @@ class Empleado(models.Model):
         for record in self:
             if not record.apellidos.strip():
                 raise ValidationError('Los apellidos no pueden estar vacíos.')
+
+    nombre_completo = fields.Char(compute='_compute_nombre_completo')
+    @api.depends('nombre', 'apellidos')
+    def _compute_nombre_completo(self):
+        for record in self:
+            record.nombre_completo = f"{record.nombre} {record.apellidos}"
 
     fecha_nacimiento = fields.Date(
         string='Fecha de nacimiento',

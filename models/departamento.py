@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError
 
 class Departamento(models.Model):
     _name = 'modulo_desafio.departamento'
+    _rec_name = 'nombre'
     
     _description = 'Departamento'
 
