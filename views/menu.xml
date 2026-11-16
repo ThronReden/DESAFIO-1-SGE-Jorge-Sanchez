@@ -7,8 +7,13 @@
         parent="menu_modulo_desafio_root" sequence="10"
     />
 
-    <!-- Menú vista videojuego -->
+    <!-- Menú vista estudio -->
     <menuitem id="menu_estudio_root" name="Estudios" action="action_estudio"
         parent="menu_modulo_desafio_root" sequence="20"
+    />
+
+    <!-- Menú vista empleado -->
+    <menuitem id="menu_empleado_root" name="Empleados" action="action_empleado"
+        parent="menu_modulo_desafio_root" sequence="30"
     />
 </odoo>
