@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Empleado(models.Model):
     _name = 'modulo_desafio.empleado'
@@ -10,12 +11,33 @@ class Empleado(models.Model):
         required=True,
         help='Nombre del empleado'
     )
+    @api.constrains('nombre')
+    def _check_nombre(self):
+        for record in self:
+            if not record.nombre.strip():
+                raise ValidationError('El nombre no puede estar vacío.')
 
     apellidos = fields.Char(
         string='Apellidos',
         required=True,
         help='Apellidos del empleado'
     )
+    @api.constrains('apellidos')
+    def _check_nombre(self):
+        for record in self:
+            if not record.nombre.strip():
+                raise ValidationError('Los apellidos no pueden estar vacíos.')
+
+    fecha_nacimiento = fields.Date(
+        string='Fecha de nacimiento',
+        required=True,
+        help='Fecha de nacimiento del empleado'
+    )
+    @api.constrains('fecha_nacimiento')
+    def _check_fecha_nacimiento(self):
+        for record in self:
+            if record.fecha_nacimiento > fields.Date.today():
+                raise ValidationError('La fecha de nacimiento no puede ser futura.')
 
     email = fields.Char(
         string='Email',
