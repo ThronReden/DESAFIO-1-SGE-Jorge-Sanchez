@@ -10,6 +10,7 @@
                 <field name="apellidos"/>
                 <field name="fecha_nacimiento"/>
                 <field name="email"/>
+                <field name="salario"/>
                 <field name="departamento_id"/>
             </list>
         </field>
@@ -32,6 +33,7 @@
                         <field name="fecha_nacimiento"/>
                     </group>
                     <group>
+                        <field name="salario"/>
                         <field name="departamento_id"/>
                         <field name="email"/>
                     </group>

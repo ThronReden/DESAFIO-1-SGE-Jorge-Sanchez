@@ -45,6 +45,17 @@ class Empleado(models.Model):
         help='Email del empleado'
     )
 
+    salario = fields.Float(
+        string='Salario',
+        required=True,
+        help='Salario del empleado'
+    )
+    @api.constrains('salario')
+    def _check_salario(self):
+        for record in self:
+            if record.salario < 0:
+                raise ValidationError('El salario no puede ser negativo.')
+
     departamento_id = fields.Many2one(
         comodel_name='modulo_desafio.departamento',
         string='Departamento',
