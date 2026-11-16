@@ -15,11 +15,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml',
         'views/videojuego_views.xml',
         'views/estudio_views.xml',
         'views/empleado_views.xml',
         'views/departamento_views.xml',
+        'views/menu.xml',
     ],
     'instalable': True,
     'application': True,
