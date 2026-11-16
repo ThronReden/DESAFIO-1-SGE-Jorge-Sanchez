@@ -1,0 +1,14 @@
+<odoo>
+    <!-- Menú para acceder a las diferentes vistas -->
+    <menuitem id="menu_modulo_desafio_root" name="Los Valves"/>
+
+    <!-- Menú vista videojuego -->
+    <menuitem id="menu_videojuego" name="Videojuegos" action="action_videojuego" 
+        parent="menu_modulo_desafio_root" sequence="10"
+    />
+
+    <!-- Menú vista videojuego -->
+    <menuitem id="menu_estudio_root" name="Estudios" action="action_estudio"
+        parent="menu_modulo_desafio_root" sequence="20"
+    />
+</odoo>
