@@ -9,6 +9,7 @@
                 <field name="logo" widget="image" options="{'size': [32, 32]}"/>
                 <field name="nombre"/>
                 <field name="fecha_lanzamiento"/>
+                <field name="descripcion"/>
                 <field name="estudio_id"/>
                 <field name="precio"/>
                 <field name="descuento"/>
@@ -32,6 +33,7 @@
                     </div>
                     <group>
                         <field name="fecha_lanzamiento"/>
+                        <field name="descripcion"/>
                         <field name="estudio_id"/>
                     </group>
                     <group>
