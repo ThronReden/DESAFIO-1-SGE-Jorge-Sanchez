@@ -18,7 +18,7 @@
     />
 
     <!-- Menú vista departamento -->
-    <menuitem id="menu_empleado_root" name="Departamentos" action="action_departamento"
+    <menuitem id="menu_departamento_root" name="Departamentos" action="action_departamento"
         parent="menu_modulo_desafio_root" sequence="40"
     />
 </odoo>
