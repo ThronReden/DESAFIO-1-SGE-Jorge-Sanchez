@@ -51,6 +51,11 @@ class Empleado(models.Model):
         required=True,
         help='Email del empleado'
     )
+    @api.constrains('email')
+    def _check_email(self):
+        for record in self:
+            if '@' not in record.email or '.' not in record.email:
+                raise ValidationError('El email no es válido.')
 
     salario = fields.Float(
         string='Salario',
