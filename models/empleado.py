@@ -23,9 +23,9 @@ class Empleado(models.Model):
         help='Apellidos del empleado'
     )
     @api.constrains('apellidos')
-    def _check_nombre(self):
+    def _check_apellidos(self):
         for record in self:
-            if not record.nombre.strip():
+            if not record.apellidos.strip():
                 raise ValidationError('Los apellidos no pueden estar vacíos.')
 
     fecha_nacimiento = fields.Date(

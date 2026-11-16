@@ -47,6 +47,7 @@ class Videojuego(models.Model):
     precio = fields.Float(
         string='Precio',
         required=True,
+        digits=(10, 2),
         help='Precio del juego'
     )
     @api.constrains('precio')
@@ -54,14 +55,11 @@ class Videojuego(models.Model):
         for record in self:
             if record.precio < 0:
                 raise ValidationError('El precio no puede ser negativo.')
-    @api.depends('precio')
-    def _compute_precio_final(self):
-        for record in self:
-            record.precio_final = round(record.precio, 2) # Redondear a dos decimales
 
     descuento = fields.Float(
         string='Descuento (%)',
         required=False,
+        digits=(5, 2),
         help='Descuento del juego'
     )
     @api.constrains('descuento')
@@ -70,12 +68,12 @@ class Videojuego(models.Model):
             if record.descuento < 0 or record.descuento > 100:
                 raise ValidationError('El descuento debe estar entre 0 y 100.')
 
-    precio_final = fields.Float('Precio final', compute='_compute_precio_final')
+    precio_final = fields.Float('Precio final', digits=(10, 2), compute='_compute_precio_final')
     @api.depends('precio', 'descuento')
     def _compute_precio_final(self):
         for record in self:
             if record.descuento:
-                # Aplicar el descuento al precio y redondear a dos decimales
-                record.precio_final = round(record.precio * (1 - record.descuento / 100), 2)
+                # Aplicar el descuento al precio, si hay
+                record.precio_final = record.precio * (1 - record.descuento / 100)
             else:
-                record.precio_final = round(record.precio, 2) # Redondear a dos decimales
+                record.precio_final = record.precio
